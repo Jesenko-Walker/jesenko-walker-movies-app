@@ -9,12 +9,68 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<header>
-    <h1>Movie App</h1>
-</header>
+
+
 <div id="loading-message">Loading...</div>
-<div id="movies-list"></div>
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center">Movie App</h1>
+            </div>
+            <div class="col">
+                <!-- Tab Content and Filter Buttons -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab1" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">ALL</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
+                    <!-- Add more tab panes as needed -->
+                </div>
+            </div>
+            <div>
+                <div class="btn-group" role="group">
+                    <!-- Sort By Button -->
+                    <button type="button" class="btn btn-secondary">Sort By</button>
+                    <!-- Filter Buttons -->
+                    <button class="btn btn-secondary filter-button" onclick="filterContent('all')">All</button>
+                    <button class="btn btn-secondary filter-button" onclick="filterContent('action')">Action</button>
+                    <button class="btn btn-secondary filter-button" onclick="filterContent('comedy')">Comedy</button>
+                    <!-- Add more filter buttons as needed -->
+            </div>
+            <div class="col">
+                <!-- Add Movie Button -->
+                <button id="addMovieButton" class="btn btn-primary">Add Movie</button>
+            </div>
+        </div>
+    </div>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Search Bar -->
+                <form id="searchForm" class="d-flex">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button id="searchButton" class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Movie Cards -->
+                <div class="row" id="movies-list">
+                    <!-- Add movie cards here -->
+                </div>
+            </div>
+        </div>
+</div>
 
 <script type="module" src="./js/main.js"></script>
 </body>
+
 </html>
