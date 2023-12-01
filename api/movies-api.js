@@ -30,7 +30,7 @@ ${id}`;
     return data;
 };
 
-export const deleteBook = async (id) => {
+export const deleteMovie = async (id) => {
     const url = `http://localhost:3000/movies/
 ${id}`;
     const options = {
@@ -69,14 +69,13 @@ export const postBook = async ({ ISBN, authorId, genre, publishedYear, summary, 
     return data;
 };
 
-export const patchBook = async (book) => {
-    const newBook = {
-        ...book,
+export const patchMovie = async (movie) => {
+    const updatedMovie = {
+        ...movie,
     };
-    const body = JSON.stringify(newBook);
+    const body = JSON.stringify(updatedMovie);
 
-    const url = `http://localhost:3000/movies
-/${book.id}`;
+    const url = `http://localhost:3000/movies/${movie.id}`;
     const options = {
         method: "PATCH",
         headers: {
