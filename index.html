@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -19,22 +19,65 @@
             <div class="col-12">
                 <h1 class="text-center">Movie App</h1>
             </div>
-            <div class="col">
+            <div class="col-6">
                 <!-- Tab Content and Filter Buttons -->
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab1" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">ALL</button>
+                        <button class="nav-link active" id="all-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" data-genre="all">ALL</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="adventure-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true" data-genre="all">Adventure</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="action-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="action-tab-pane" aria-selected="true" data-genre="all">Action</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="drama-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="crime-tab-pane" aria-selected="true" data-genre="all">Drama</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="d-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                                type="button" role="tab" aria-controls="crime-tab-pane" aria-selected="true" data-genre="all">Crime</button>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-                    <!-- Add more tab panes as needed -->
+                    <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">Content for ALL genre</div>
+                    <div class="tab-pane fade" id="adventure-tab-pane" role="tabpanel" aria-labelledby="adventure-tab" tabindex="0">Content for Adventure genre</div>
+                    <div class="tab-pane fade" id="action-tab-pane" role="tabpanel" aria-labelledby="action-tab" tabindex="0">Content for Action genre</div>
+                    <div class="tab-pane fade" id="drama-tab-pane" role="tabpanel" aria-labelledby="drama-tab" tabindex="0">Content for Drama genre</div>
+                    <div class="tab-pane fade" id="crime-tab-pane" role="tabpanel" aria-labelledby="crime-tab" tabindex="0">Content for Crime genre</div>
                 </div>
             </div>
-            <div class="col">
-                <!-- Add Movie Button -->
+
+
+            <div class=" col btn-group ml-auto" role="group">
+
                 <button id="addMovieButton" class="btn btn-primary">Add Movie</button>
+                    <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="addMovieModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="addMovieModalLabel">Add Movie</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                         </button>
+                                         </div>
+                                        <div class="modal-body">
+                                                <!-- Your movie addition form goes here -->
+                                <!-- For example, you can add input fields for movie title, genre, etc. -->
+                                    </div>
+                                    <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="saveMovie()">Save Movie</button>
+                                <!-- Add a function (e.g., saveMovie) to handle saving the movie -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -42,7 +85,7 @@
         <div class="row">
             <div class="col">
                 <!-- Search Bar -->
-                <form id="searchForm" class="d-flex">
+                <form id="searchForm" class="d-flex m-4">
                     <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button id="searchButton" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -58,6 +101,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </div>
 
 
