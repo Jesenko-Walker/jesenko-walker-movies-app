@@ -4,7 +4,7 @@
       "id": 7,
       "title": "The Godfather Part 2",
       "description": "A crime movie",
-      "rating": 5,
+      "rating": 4.5,
       "img": "https://mir-s3-cdn-cf.behance.net/project_modules/hd/e9a102153356691.632de48582115.jpg",
       "genres": [
         "Crime",
@@ -131,6 +131,12 @@
         "Sci-Fi",
         "Drama"
       ]
+    },
+    {
+      "title": "the",
+      "rating": 2,
+      "genres": [],
+      "id": 19
     }
   ]
 }
