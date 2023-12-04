@@ -2,10 +2,10 @@
   "movies": [
     {
       "id": 7,
-      "title": "The Godfather Part II ",
+      "title": "The Godfather Part 2",
       "description": "A crime movie",
-      "rating": 4.8,
-      "posterImg": "./img/The_Godfather_Part_II.jpg",
+      "rating": 4.7,
+      "img": "https://mir-s3-cdn-cf.behance.net/project_modules/hd/e9a102153356691.632de48582115.jpg",
       "genres": [
         "Crime",
         "Drama"
@@ -16,7 +16,7 @@
       "title": "The Dark Knight Rises",
       "description": "A superhero film.",
       "rating": 4.7,
-      "posterImg": "./img/The_Dark_Knight_Rises.jpg",
+      "img": "./img/The Dark Knight Rises.jpeg",
       "genres": [
         "Action",
         "Thriller"
@@ -26,8 +26,8 @@
       "id": 9,
       "title": "Pulp Fiction",
       "description": "A crime film.",
-      "rating": 5,
-      "posterImg": "./img/Pulp_Fiction.jpg",
+      "rating": 4.8,
+      "img": "./img/Pulp Fiction.jpeg",
       "genres": [
         "Crime",
         "Drama"
@@ -38,7 +38,7 @@
       "title": "Fight Club",
       "description": "A drama film.",
       "rating": 4.7,
-      "posterImg": "./img/Fight_Club.jpg",
+      "img": "./img/Fight Club.jpeg",
       "genres": [
         "Drama"
       ]
@@ -48,7 +48,7 @@
       "title": "Forrest Gump",
       "description": "A comedy-drama film.",
       "rating": 4.8,
-      "posterImg": "./img/Forrest_Gump.jpg",
+      "img": "./img/Forrest Gump.jpeg",
       "genres": [
         "Comedy",
         "Drama"
@@ -59,10 +59,77 @@
       "title": "Inception",
       "description": "A science fiction action film.",
       "rating": 4.7,
-      "posterImg": "./img/Inception.jpg",
+      "img": "./img/Inception.jpeg",
       "genres": [
         "Action",
         "Sci-Fi"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "The Shawshank Redemption",
+      "description": "A drama film about hope and redemption.",
+      "rating": 4.9,
+      "img": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "genres": [
+        "Drama"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "The Matrix",
+      "description": "A science fiction action film.",
+      "rating": 4.8,
+      "img": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
+      "genres": [
+        "Action",
+        "Sci-Fi"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "The Silence of the Lambs",
+      "description": "A psychological horror film.",
+      "rating": 4.9,
+      "img": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Horror"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "The Grand Budapest Hotel",
+      "description": "A comedy film with a touch of crime.",
+      "rating": 4.7,
+      "img": "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_.jpg",
+      "genres": [
+        "Comedy",
+        "Crime"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Blade Runner",
+      "description": "A neo-noir science fiction film.",
+      "rating": 4.8,
+      "img": "https://m.media-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+      "genres": [
+        "Sci-Fi",
+        "Thriller"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Eternal Sunshine of the Spotless Mind",
+      "description": "A romantic science fiction comedy-drama.",
+      "rating": 4.7,
+      "img": "https://media.posterlounge.com/img/products/720000/714927/714927_poster.jpg",
+      "genres": [
+        "Romance",
+        "Sci-Fi",
+        "Drama"
       ]
     }
   ]

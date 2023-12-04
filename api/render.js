@@ -1,12 +1,11 @@
 import { getMovies, deleteMovie, patchMovie, getMovie } from "./movies-api.js";
 
-export const renderMovies = async () => {
+export const renderMovies = (movies) => {
     const movieList = document.getElementById('movies-list');
     const loadingMessage = document.getElementById('loadingMessage');
 
     try {
-        loadingMessage.style.display = 'block';
-        const movies = await getMovies();
+    loadingMessage.style.display = 'block';
 
         movieList.innerHTML = '';
 
@@ -15,9 +14,16 @@ export const renderMovies = async () => {
             card.classList.add('card', 'mb-3');
 
             const posterImg = document.createElement('img');
-            posterImg.src = 'https://via.placeholder.com/150';
             posterImg.classList.add('card-img-top');
             posterImg.alt = 'Movie Poster';
+
+            console.log('Movie Image:', movie.img);
+
+            const imageUrl = movie.img ? new URL(movie.img, window.location.href).href : '';
+            console.log('Full Image URL:', imageUrl);
+
+            posterImg.src = movie.img || 'https://via.placeholder.com/150';
+
             card.appendChild(posterImg);
 
             const cardBody = document.createElement('div');
@@ -64,7 +70,7 @@ export const renderMovies = async () => {
             movie.genres.forEach(genre => {
                 const genreButton = document.createElement('button');
                 genreButton.type = 'button';
-                genreButton.classList.add('btn', 'btn-outline-primary', 'btn-sm', 'ml-2');
+                genreButton.classList.add('btn', 'btn-outline-primary', 'btn-sm', 'ml-2','mr-2');
                 genreButton.textContent = genre;
                 genresElement.appendChild(genreButton);
             });
@@ -124,11 +130,13 @@ export const renderMovies = async () => {
             card.appendChild(cardBody);
 
             movieList.appendChild(card);
-            loadingMessage.style.display = 'none';
         });
+
+        loadingMessage.style.display = 'none';
     } catch (error) {
-        console.error('Error getting movies:', error);
-        movieList.innerHTML = '<p>Error loading movies</p>';
+        console.error('Error rendering movies:', error);
+        movieList.innerHTML = '<p>Error rendering movies</p>';
+        loadingMessage.style.display = 'none';
     }
 };
 
