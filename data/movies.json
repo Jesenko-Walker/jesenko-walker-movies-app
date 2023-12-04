@@ -5,6 +5,7 @@
       "title": "The Shawshank Redemption",
       "description": "A drama film.",
       "rating": 4.9,
+      "posterImg": "./img/The_Shawshank_Redemption.jpg",
       "genres": [
         "Drama"
       ]
@@ -14,6 +15,7 @@
       "title": "The Godfather",
       "description": "A crime film.",
       "rating": 4.8,
+      "posterImg": "./img/The_Godfather.jpg",
       "genres": [
         "Crime",
         "Drama"
@@ -24,6 +26,7 @@
       "title": "The Godfather: Part II",
       "description": "A crime film.",
       "rating": 4.8,
+      "posterImg": "./img/The_Godfather_Part_II.jpg",
       "genres": [
         "Crime",
         "Drama"
@@ -34,6 +37,7 @@
       "title": "The Dark Knight Rises",
       "description": "A superhero film.",
       "rating": 4.7,
+      "posterImg": "./img/The_Dark_Knight_Rises.jpg",
       "genres": [
         "Action",
         "Thriller"
@@ -44,6 +48,7 @@
       "title": "Pulp Fiction",
       "description": "A crime film.",
       "rating": 4.8,
+      "posterImg": "./img/Pulp_Fiction.jpg",
       "genres": [
         "Crime",
         "Drama"
@@ -54,6 +59,7 @@
       "title": "Fight Club",
       "description": "A drama film.",
       "rating": 4.7,
+      "posterImg": "./img/Fight_Club.jpg",
       "genres": [
         "Drama"
       ]
@@ -63,6 +69,7 @@
       "title": "Forrest Gump",
       "description": "A comedy-drama film.",
       "rating": 4.8,
+      "posterImg": "./img/Forrest_Gump.jpg",
       "genres": [
         "Comedy",
         "Drama"
@@ -73,6 +80,7 @@
       "title": "Inception",
       "description": "A science fiction action film.",
       "rating": 4.7,
+      "posterImg": "./img/Inception.jpg",
       "genres": [
         "Action",
         "Sci-Fi"
