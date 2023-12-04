@@ -26,7 +26,7 @@
       "id": 9,
       "title": "Pulp Fiction",
       "description": "A crime film.",
-      "rating": 4.8,
+      "rating": 5,
       "posterImg": "./img/Pulp_Fiction.jpg",
       "genres": [
         "Crime",
