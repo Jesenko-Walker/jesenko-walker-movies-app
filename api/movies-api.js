@@ -62,3 +62,24 @@ export const patchMovie = async (movie) => {
     return data;
 };
 
+export const postMovie = async ({ title, description, rating, genres}) => {
+    const newMovie = {
+        title,
+        description,
+        rating,
+        genres,
+    };
+    const body = JSON.stringify(newMovie);
+
+    const url = `http://localhost:3000/movies`; // Adjust the URL accordingly
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: body,
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    return data;
+};
