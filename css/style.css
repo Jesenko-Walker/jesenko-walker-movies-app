@@ -9,9 +9,9 @@
     flex-direction: column;
 }
 
-#loadingMessage {
-    display: none;
-}
+/*#loadingMessage {*/
+/*    display: none;*/
+/*}*/
 
 #searchForm{
 
