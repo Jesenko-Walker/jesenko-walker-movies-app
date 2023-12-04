@@ -36,10 +36,21 @@
                                          </div>
                                         <div class="modal-body">
 
+                                            <form id="addMovieForm">
+                                                <div class="mb-3">
+                                                    <label for="addTitle" class="form-label">Title:</label>
+                                                    <input type="text" id="addTitle" class="form-control" required>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="addRating" class="form-label">Rating:</label>
+                                                    <input type="number" id="addRating" class="form-control" step="0.1" required>
+                                                </div>
+                                            </form>
                                     </div>
                                     <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" onclick="saveMovie()">Save Movie</button>
+                                <button type="button" class="btn btn-primary" id="saveNewMovieButton">Save Movie</button>
+
                             </div>
                         </div>
                     </div>
