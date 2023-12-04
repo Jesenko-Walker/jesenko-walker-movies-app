@@ -1,5 +1,5 @@
 import { renderMovies, saveChanges} from '../api/render.js';
-import { getMovies } from '../api/movies-api.js';
+import {getMovie, getMovies, patchMovie, postMovie} from '../api/movies-api.js';
 
 
 const debounce = (func, delay) => {
@@ -30,45 +30,29 @@ const openAddMovieModal = () => {
     modal.show();
 };
 
-const saveNewMovie = async () => {
+const addMovie = async () => {
     try {
-        const addTitle = document.getElementById('addTitle').value;
-        const addRating = parseFloat(document.getElementById('addRating').value);
-
-        if (!addTitle || isNaN(addRating)) {
-            // Validation failed, show an error message or handle it accordingly
-            console.error('Please fill out all required fields.');
-            return;
-        }
+        const title = document.getElementById('addTitle').value;
+        const rating = parseFloat(document.getElementById('addRating').value);
+        const genres = [];
 
         const newMovie = {
-            title: addTitle,
-            rating: addRating,
-            // You can add other properties if needed
+            title,
+            rating,
+            genres,
         };
 
-        // Retrieve existing movies from localStorage or initialize an empty array
-        const existingMovies = JSON.parse(localStorage.getItem('movies')) || [];
-
-        // Add the new movie to the array
-        existingMovies.push(newMovie);
-
-        // Save the updated array back to localStorage
-        localStorage.setItem('movies', JSON.stringify(existingMovies));
-
-        // Close the modal after saving
-        const modal = new bootstrap.Modal(document.getElementById('addMovieModal'));
-        modal.hide();
-
-        // Refresh the movie list
-        await renderMovies();
+        await postMovie(newMovie);
+        const movies = await getMovies();
+        await renderMovies(movies);
     } catch (error) {
-        console.error('Error saving new movie:', error);
+        console.error('Error adding movie:', error);
     }
 };
 
 //MAIN
 (async () => {
+    const newMovieButton = document.getElementById('saveNewMovieButton');
     const movies = await getMovies();
     renderMovies(movies);
     const saveChangesButton = document.getElementById('saveChangesButton');
@@ -78,4 +62,5 @@ const saveNewMovie = async () => {
     searchInput.addEventListener('input', debouncedSearch);
     document.getElementById('addMovieButton').addEventListener('click', () => openAddMovieModal());
     document.getElementById('saveNewMovieButton').addEventListener('click', () => saveNewMovie());
+    newMovieButton.addEventListener('click', () => addMovie());
 })();

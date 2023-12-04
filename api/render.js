@@ -91,21 +91,20 @@ export const renderMovies = (movies) => {
             dropdownMenu.classList.add('dropdown-menu');
             dropdownMenu.setAttribute('aria-labelledby', 'dropdownMenuButton');
 
-            // Remove button
+
             const removeButton = document.createElement('button');
             removeButton.classList.add('btn', 'btn-danger', 'btn-sm', 'ml-2');
             removeButton.textContent = 'Remove';
             removeButton.addEventListener('click', async () => {
                 try {
-                    // Delete the movie from the server
                     await deleteMovie(movie.id);
-                    await renderMovies();
+                    let movies = await getMovies();
+                    await renderMovies(movies);
                 } catch (error) {
                     console.error('Error removing movie:', error);
                 }
             });
 
-            // Edit button
             const editButton = document.createElement('button');
             editButton.classList.add('btn', 'btn-primary', 'btn-sm', 'ml-2');
             editButton.textContent = 'Edit';
@@ -135,7 +134,6 @@ export const renderMovies = (movies) => {
         loadingMessage.style.display = 'none';
     } catch (error) {
         console.error('Error rendering movies:', error);
-        movieList.innerHTML = '<p>Error rendering movies</p>';
         loadingMessage.style.display = 'none';
     }
 };
