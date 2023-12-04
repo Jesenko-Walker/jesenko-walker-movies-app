@@ -25,14 +25,11 @@ const handleSearch = async () => {
     }
 };
 
-// Function to open the 'Add Movie' modal
 const openAddMovieModal = () => {
     const modal = new bootstrap.Modal(document.getElementById('addMovieModal'));
     modal.show();
 };
 
-// Function to save a new movie
-// Function to save a new movie locally
 const saveNewMovie = async () => {
     try {
         const addTitle = document.getElementById('addTitle').value;
@@ -70,10 +67,6 @@ const saveNewMovie = async () => {
     }
 };
 
-
-
-
-
 //MAIN
 (async () => {
     const movies = await getMovies();
@@ -83,13 +76,6 @@ const saveNewMovie = async () => {
     const debouncedSearch = debounce(handleSearch, 300);
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', debouncedSearch);
-    Event listener for the 'Add Movie' button
     document.getElementById('addMovieButton').addEventListener('click', () => openAddMovieModal());
-
-    Event listener for the 'Save New Movie' button
     document.getElementById('saveNewMovieButton').addEventListener('click', () => saveNewMovie());
-
-     Attach an event listener to the 'Save Changes' button
-     const saveChangesButton = document.getElementById('saveChangesButton');
-     saveChangesButton.addEventListener('click', () => saveChanges());
 })();

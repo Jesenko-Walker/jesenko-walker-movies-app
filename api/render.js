@@ -176,8 +176,8 @@ export const saveChanges = async () => {
         };
 
         await patchMovie(updatedMovie);
-
-        await renderMovies();
+        const movies = await getMovies();
+        await renderMovies(movies);
     } catch (error) {
         console.error('Error saving changes:', error);
     }
