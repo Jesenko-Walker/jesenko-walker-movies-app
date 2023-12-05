@@ -26,9 +26,27 @@ const handleSearch = async () => {
 };
 
 const openAddMovieModal = () => {
-    const modal = new bootstrap.Modal(document.getElementById('addMovieModal'));
+    const modalElement = document.getElementById('addMovieModal');
+    const modal = new bootstrap.Modal(modalElement);
+
+    // Close buttons with class .close
+    const closeButtonClass = document.querySelectorAll('.close');
+    closeButtonClass.forEach(button => {
+        button.addEventListener('click', () => modal.hide());
+    });
+
+    // Close button with id closeBtn
+    const closeButtonId = document.getElementById('closeBtn'); // Adjust the id
+    if (closeButtonId) {
+        closeButtonId.addEventListener('click', () => modal.hide());
+    }
+
     modal.show();
 };
+
+
+
+
 
 const addMovie = async () => {
     try {
