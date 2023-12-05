@@ -29,13 +29,11 @@ const openAddMovieModal = () => {
     const modalElement = document.getElementById('addMovieModal');
     const modal = new bootstrap.Modal(modalElement);
 
-    // Close buttons with class .close
     const closeButtonClass = document.querySelectorAll('.close');
     closeButtonClass.forEach(button => {
         button.addEventListener('click', () => modal.hide());
     });
 
-    // Close button with id closeBtn
     const closeButtonId = document.getElementById('closeBtn'); // Adjust the id
     if (closeButtonId) {
         closeButtonId.addEventListener('click', () => modal.hide());
@@ -43,10 +41,6 @@ const openAddMovieModal = () => {
 
     modal.show();
 };
-
-
-
-
 
 const addMovie = async () => {
     try {

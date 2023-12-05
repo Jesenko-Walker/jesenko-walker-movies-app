@@ -39,27 +39,23 @@ export const renderMovies = (movies) => {
             descriptionElement.textContent = movie.description;
             cardBody.appendChild(descriptionElement);
 
-            // Rating bar
             const ratingBar = document.createElement('div');
             ratingBar.classList.add('rating-bar');
 
             const ratingFill = document.createElement('div');
             ratingFill.classList.add('rating-fill');
-            ratingFill.style.width = `${(movie.rating / 5) * 100}%`; // Convert rating to percentage
-            ratingFill.style.backgroundColor = '#ffc107'; // Set the fill color (e.g., yellow)
+            ratingFill.style.width = `${(movie.rating / 5) * 100}%`;
+            ratingFill.style.backgroundColor = '#ffc107';
 
             ratingBar.appendChild(ratingFill);
 
-            // Rating text
             const ratingText = document.createElement('div');
             ratingText.classList.add('rating-text');
             ratingText.textContent = `${movie.rating}/5`;
 
-            // Append both rating bar and rating text to the card body
             cardBody.appendChild(ratingBar);
             cardBody.appendChild(ratingText);
 
-            // Genres
             const genresElement = document.createElement('div');
             genresElement.classList.add('mb-3');
 
@@ -77,7 +73,6 @@ export const renderMovies = (movies) => {
 
             cardBody.appendChild(genresElement);
 
-            // Dropdown button
             const dropdownButton = document.createElement('button');
             dropdownButton.classList.add('btn', 'btn-secondary', 'dropdown-toggle');
             dropdownButton.setAttribute('type', 'button');
@@ -86,7 +81,6 @@ export const renderMovies = (movies) => {
             dropdownButton.setAttribute('aria-expanded', 'false');
             dropdownButton.textContent = 'Options';
 
-            // Dropdown menu
             const dropdownMenu = document.createElement('div');
             dropdownMenu.classList.add('dropdown-menu');
             dropdownMenu.setAttribute('aria-labelledby', 'dropdownMenuButton');
@@ -112,10 +106,10 @@ export const renderMovies = (movies) => {
             editButton.dataset.movieId = movie.id;
 
             editButton.addEventListener('click', (event) => {
-                // Retrieve the movie ID from the data attribute
+
                 const movieId = event.target.dataset.movieId;
 
-                // Call the openEditModal function with the movie and movieId
+
                 openEditModal(movie, movieId);
             });
 
