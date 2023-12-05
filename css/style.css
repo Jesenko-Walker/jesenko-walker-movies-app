@@ -9,9 +9,7 @@
     flex-direction: column;
 }
 
-/*#loadingMessage {*/
-/*    display: none;*/
-/*}*/
+
 
 #searchForm{
 
@@ -50,9 +48,13 @@
 
 .rating-bar {
     height: 15px; /* Adjust the height of the rating bar */
+
 }
 
 .rating-fill {
     height: 100%;
 }
+
+
+
 
